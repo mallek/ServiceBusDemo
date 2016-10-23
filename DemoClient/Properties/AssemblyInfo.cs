@@ -6,11 +6,11 @@ using System.Runtime.Serialization;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ServiceBusDemo")]
+[assembly: AssemblyTitle("DemoClient")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ServiceBusDemo")]
+[assembly: AssemblyProduct("DemoClient")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +21,7 @@ using System.Runtime.Serialization;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cbef58be-3c10-40c8-bb59-f498021da71c")]
+[assembly: Guid("32b093e0-941e-4f2b-8787-531c7289ed18")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -37,4 +37,4 @@ using System.Runtime.Serialization;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 [assembly: ContractNamespace("http://www.demome.com/DemoService",
-                              ClrNamespace = "ServiceBusDemo")]
+                              ClrNamespace = "DemoClient")]
