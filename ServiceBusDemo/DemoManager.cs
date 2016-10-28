@@ -13,6 +13,7 @@ namespace ServiceBusDemo
     {
         public string GetData(int data)
         {
+            Console.WriteLine($"The data service was called with this paramater: {data}");
             return $"The data passed in was {data}";
         }
     }

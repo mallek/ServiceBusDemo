@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Composition.Hosting;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.Principal;
 using System.ServiceModel;
 
 namespace ServiceBusDemo
@@ -13,7 +8,14 @@ namespace ServiceBusDemo
     {
         static void Main(string[] args)
         {
-          
+
+            if (!IsAdministrator())
+            {
+                Console.WriteLine("You must run this applicaiton in administrator mode");
+                Console.ReadKey();
+                return;
+            }
+
             Console.WriteLine("Starting up service...");
             Console.WriteLine("");
 
@@ -30,8 +32,15 @@ namespace ServiceBusDemo
                 Console.WriteLine($"Contract: {endpoint.Contract.ConfigurationName}");
             }
 
-            Console.WriteLine();
+            Console.WriteLine("Press any key to exit");
             Console.ReadKey();
+        }
+
+        public static bool IsAdministrator()
+        {
+            var identity = WindowsIdentity.GetCurrent();
+            var principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
         }
     }
 }
